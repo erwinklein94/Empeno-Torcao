@@ -1,0 +1,10 @@
+.menu-toggle{position:fixed;z-index:50;left:266px;top:20px;width:42px;height:42px;border:0;border-radius:12px;background:#fff;color:var(--navy);box-shadow:0 8px 28px rgba(0,56,101,.2);font-size:20px;cursor:pointer;transition:left .25s ease,transform .2s}
+.menu-toggle:hover{transform:translateY(-2px)}
+.sidebar,.shell{transition:all .25s ease}
+body.sidebar-collapsed .shell{grid-template-columns:0 1fr}
+body.sidebar-collapsed .sidebar{transform:translateX(-100%);overflow:hidden;padding-left:0;padding-right:0}
+body.sidebar-collapsed .menu-toggle{left:18px}
+.content{padding-top:76px}
+.topbar-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+@media(max-width:900px){.menu-toggle{left:18px}.shell{grid-template-columns:0 1fr}.sidebar{position:fixed;z-index:45;left:0;top:0;width:255px;height:100vh;transform:translateX(-100%)}body.menu-open .sidebar{transform:translateX(0)}body.menu-open .menu-toggle{left:266px}body.sidebar-collapsed .sidebar{transform:translateX(-100%)}}
+@media print{@page{size:landscape;margin:10mm}.sidebar,.menu-toggle,.toolbar,.topbar-actions,.side-foot{display:none!important}.shell{display:block!important}.content{padding:0!important;max-width:none!important}.card,.stat{box-shadow:none!important;break-inside:avoid}.table-wrap{overflow:visible!important}.table-wrap table{min-width:0!important;font-size:8px}.table-wrap th,.table-wrap td{padding:4px!important}.table-wrap input{border:0!important;padding:0!important;min-width:0!important;font-size:8px!important;background:transparent!important}.charts{grid-template-columns:2fr 1fr!important}.charts.extra{grid-template-columns:1fr 1fr!important}.chart-card canvas{max-height:220px}.memo{break-before:page}.topbar{margin-bottom:12px}body{background:#fff}}
