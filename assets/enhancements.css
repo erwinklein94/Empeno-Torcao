@@ -8,3 +8,53 @@ body.sidebar-collapsed .menu-toggle{left:18px}
 .topbar-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 @media(max-width:900px){.menu-toggle{left:18px}.shell{grid-template-columns:0 1fr}.sidebar{position:fixed;z-index:45;left:0;top:0;width:255px;height:100vh;transform:translateX(-100%)}body.menu-open .sidebar{transform:translateX(0)}body.menu-open .menu-toggle{left:266px}body.sidebar-collapsed .sidebar{transform:translateX(-100%)}}
 @media print{@page{size:landscape;margin:10mm}.sidebar,.menu-toggle,.toolbar,.topbar-actions,.side-foot{display:none!important}.shell{display:block!important}.content{padding:0!important;max-width:none!important}.card,.stat{box-shadow:none!important;break-inside:avoid}.table-wrap{overflow:visible!important}.table-wrap table{min-width:0!important;font-size:8px}.table-wrap th,.table-wrap td{padding:4px!important}.table-wrap input{border:0!important;padding:0!important;min-width:0!important;font-size:8px!important;background:transparent!important}.charts{grid-template-columns:2fr 1fr!important}.charts.extra{grid-template-columns:1fr 1fr!important}.chart-card canvas{max-height:220px}.memo{break-before:page}.topbar{margin-bottom:12px}body{background:#fff}}
+
+/* Mobile: more information on screen, without controls colliding. */
+@media(max-width:900px){
+ body{overflow-x:hidden;font-size:14px}
+ .content{width:100%;min-width:0;padding:64px 12px 22px}
+ .sidebar{width:min(230px,calc(100vw - 50px));padding:20px 14px;overflow-y:auto}
+ .sidebar .nav{display:block;overflow:visible}
+ .sidebar .nav a{padding:10px 12px;margin:2px 0;font-size:13px}
+ .sidebar .context{margin:18px 10px 7px;font-size:9px}
+ .brand{margin-bottom:24px;font-size:15px;gap:9px}
+ .brand-mark{width:28px;height:28px;border-radius:8px}
+ .side-foot{position:static;margin-top:24px;font-size:10px}
+ .menu-toggle{left:12px;top:12px;width:36px;height:36px;border-radius:10px;font-size:16px}
+ body.menu-open .menu-toggle{left:min(238px,calc(100vw - 42px))}
+ .topbar{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-bottom:16px}
+ .topbar h1{font-size:clamp(24px,7vw,30px);line-height:1.08}
+ .topbar p{font-size:13px;line-height:1.4}
+ .topbar-actions{width:100%;gap:7px}
+ .topbar-actions .badge{order:2;font-size:10px;padding:6px 9px}
+ .topbar-actions .btn{order:1}
+ .btn{min-height:36px;padding:8px 11px;border-radius:9px;font-size:12px}
+ .toolbar{gap:7px;margin-bottom:12px}
+ .card{padding:14px;border-radius:14px}
+ .table-wrap{max-width:calc(100vw - 24px);-webkit-overflow-scrolling:touch}
+ table{font-size:12px}
+ th{padding:8px;font-size:9px}
+ td{padding:6px 8px}
+ td input{min-width:88px;padding:7px 8px;font-size:12px}
+ td .btn.danger{width:30px;min-height:30px;padding:3px;font-size:14px}
+ .formula-grid{gap:8px}
+ .formula{padding:11px}
+ .formula code,.note{font-size:11px}
+ .class-detail{min-width:125px!important;max-width:150px!important;font-size:10px}
+}
+@media(max-width:520px){
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
+ .stat{min-width:0;padding:12px;border-radius:12px}
+ .stat strong{font-size:21px;overflow-wrap:anywhere}
+ .stat small{font-size:8px;line-height:1.2}
+ .stat em{font-size:9px;line-height:1.25}
+ .charts,.charts.extra{gap:10px}
+ .chart-card{min-height:280px;padding:12px}
+ .chart-card h2{font-size:15px;margin-bottom:8px}
+ .chart-card canvas{height:220px}
+ .legend{gap:10px;font-size:10px}
+ .insights li{padding:9px 0}
+ .insights b{font-size:12px}.insights small{font-size:10px}
+ .memo{margin-top:12px}
+ .formula-grid{grid-template-columns:1fr!important}
+}
