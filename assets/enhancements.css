@@ -12,6 +12,7 @@ body.sidebar-collapsed .menu-toggle{left:18px}
 /* Mobile: more information on screen, without controls colliding. */
 @media(max-width:900px){
  body{overflow-x:hidden;font-size:14px}
+ .shell{display:block!important;width:100%;min-height:100vh}
  .content{width:100%;min-width:0;padding:64px 12px 22px}
  .sidebar{width:min(230px,calc(100vw - 50px));padding:20px 14px;overflow-y:auto}
  .sidebar .nav{display:block;overflow:visible}
